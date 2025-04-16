@@ -1,19 +1,30 @@
 let numInput = document.getElementById("numInput");   
 
-function log() {
-    console.log(numInput.value);
+function FizzBuzz() {
     let num = parseInt(numInput.value);
-// Create check to verify the input is a number and is positive 
     console.log(num);
-
-    if ( num % 3 === 0 && num % 5 === 0){
-        console.log("The number is divisible by both 3 and 5");
-    } else if (num % 3 === 0){
-        console.log("The number is divisible by 3");
-    } else if (num % 5 === 0){
-        console.log("The number is divisible by 5");
+// Input Value Validation Check
+    if (isNaN(num)) {
+        console.log("Please enter a valid number");
+        return;
+    }
+    if (num < 0) {
+        console.log("Please enter a positive number");
+        return;
+    }
+    if (num === 0) {
+        console.log("The number is zero");
+        return;
+    }
+// FizzBuzz Logic
+    if (num % 3 === 0 && num % 5 === 0) {
+        console.log("FizzBuzz");
+    } else if (num % 3 === 0) {
+        console.log("Fizz");
+    } else if (num % 5 === 0) {
+        console.log("Buzz");
     } else {
-        console.log("The number is not divisible by 3 or 5");
+        console.log(num);
     }
 }
 
